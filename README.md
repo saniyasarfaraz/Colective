@@ -52,7 +52,7 @@ Frontend - React.js, Tailwind CSS, React Router DOM
 Colective/
 ├── Colective-Client/      # React frontend with Tailwind CSS
 ├── Colective-Server/      # Node.js and Express backend
-├── LandingPage/           # Separate landing page (React)
+├── LandingPage/           # Separate landing page (TypeScript)
 └── README.md              # Project documentation
 ```
 

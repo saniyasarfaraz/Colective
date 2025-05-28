@@ -3,21 +3,43 @@ import { FaUserFriends } from 'react-icons/fa';
 import { GrStatusInfo } from 'react-icons/gr';
 import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5';
 import { MdLowPriority, MdOutlineDescription, MdOutlineSubtitles } from 'react-icons/md';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TaskModal = ({ isOpen, onClose, onSubmit, newTask, users, handleChange, editingTaskId }) => {
   if (!isOpen) return null;
 
+  const today = new Date().toISOString().split('T')[0];
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const selectedDate = new Date(newTask.dueDate);
+    const now = new Date();
+
+    if (selectedDate < new Date(now.toDateString())) {
+      toast.error('⚠️ Cannot assign task in the past!', {
+        position: 'top-center',
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      return;
+    }
+
+    onSubmit(e); // ✅ Call parent submit only if date is valid
+  };
+
   return (
-    <div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="fixed inset-0 z-[999] flex items-center px-[15px] justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-[999] flex items-center px-[15px] justify-center bg-black bg-opacity-50">
+      <ToastContainer />
       <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="bg-white rounded-lg shadow-lg w-full max-w-md mx-auto p-6 relative">
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="bg-white rounded-lg shadow-lg w-full max-w-md mx-auto p-6 relative"
+      >
         <button
           onClick={onClose}
           className="absolute text-[28px] top-2 right-[22px] text-gray-400 hover:text-gray-700"
@@ -28,7 +50,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, newTask, users, handleChange, ed
           {editingTaskId ? 'Edit Task' : 'Create New Task'}
         </h3>
         <div className='w-full rounded-xl bg-gray-300 h-[2px] mt-[10px] mb-[15px]'></div>
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form onSubmit={handleFormSubmit} className="space-y-4">
           <div>
             <div className='flex text-[15px] items-center'>
               <MdOutlineSubtitles />
@@ -86,6 +108,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, newTask, users, handleChange, ed
               <input
                 type="date"
                 name="dueDate"
+                min={today} // 👈 Prevents selecting before today
                 value={newTask.dueDate}
                 required
                 onChange={handleChange}

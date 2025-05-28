@@ -148,7 +148,7 @@ const Overview = () => {
           className='bg-gray-100 border rounded-2xl text-white p-[15px] w-full  flex flex-row xsx:w-[90%]'>
           <SiMyspace className='mr-[5px] text-[38px] md:text-[44px] text-gray-100 bg-blue-500 p-[9px] rounded-full' />
           <div className='ml-[15px]'>
-            <p className='font-bold text-gray-400 text-[10px] md:text-[12px]'>My Projects:</p>
+            <p className='font-bold text-gray-400 text-[10px] md:text-[12px]'>Projects Created:</p>
             <p className='font-medium text-gray-600 text-[18px] md:text-[22px]'>{projectsCount.adminProjectsCount}</p>
           </div>
         </motion.div>
@@ -172,7 +172,7 @@ const Overview = () => {
           className='bg-gray-100 border rounded-2xl text-white p-[15px] w-full flex flex-row xsx:w-[90%]'>
           <MdManageAccounts className='mr-[5px] text-[38px] md:text-[44px] text-gray-100 bg-blue-500 p-[9px] rounded-full' />
           <div className='ml-[15px]'>
-            <p className='font-bold text-gray-400 text-[10px] md:text-[12px]'>Projects Control:</p>
+            <p className='font-bold text-gray-400 text-[10px] md:text-[12px]'>Projects to manage:</p>
             <p className='font-medium text-gray-600 text-[18px] md:text-[22px]'>{projectsCount.managerProjectCount}</p>
           </div>
         </motion.div>

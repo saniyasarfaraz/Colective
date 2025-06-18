@@ -29,7 +29,7 @@ app.use("/manageusers", require("./routes/AddUsersRoutes"));
 
 app.use("/joinedprojects", require("./routes/JoinedProjectRoutes"));
 
-app.use("/manageTasks", require("./routes/TaskRoutes"));
+app.use("/manageTasks", require("./routes/taskRoutes"));
 
 app.use("/projecttasks", require("./routes/UsersProjectTasksRoutes"));
 

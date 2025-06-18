@@ -32,7 +32,7 @@ const Hero = () => {
   }, []);
 
   const handleStartClick = () => {
-    window.location.href = 'http://localhost:5173/register';
+    window.location.href = `${import.meta.env.VITE_Client_URL}/register`;
   };
 
   return (

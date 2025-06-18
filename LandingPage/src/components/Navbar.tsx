@@ -44,10 +44,10 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="ghost" className="text-sm" onClick={() => window.location.href = 'http://localhost:5173/login'}>
+          <Button variant="ghost" className="text-sm" onClick={() => window.location.href = `${import.meta.env.VITE_Client_URL}/login`}>
             Log in
           </Button>
-          <Button className="bg-colective-purple hover:bg-colective-purple-dark" onClick={() => window.location.href = 'http://localhost:5173/register'}>
+          <Button className="bg-colective-purple hover:bg-colective-purple-dark" onClick={() => window.location.href = `${import.meta.env.VITE_Client_URL}/register`}>
             Sign up free
           </Button>
         </div>
@@ -94,10 +94,11 @@ const Navbar = () => {
               Pricing
             </a>
             <div className="pt-4 flex flex-col space-y-2">
-              <Button variant="ghost" onClick={() => window.location.href = 'http://localhost:5173/login'}>
+              <Button variant="ghost" onClick={() => window.location.href = `${import.meta.env.VITE_Client_URL}/login`}>
                 Log in
               </Button>
-              <Button className="bg-colective-purple hover:bg-colective-purple-dark" onClick={() => window.location.href = 'http://localhost:5173/register'}>
+              <Button className="bg-colective-purple hover:bg-colective-purple-dark" onClick={() => window.location.href = `${import.meta.env.VITE_Client_URL}/register`}>
+
                 Sign up free
               </Button>
             </div>

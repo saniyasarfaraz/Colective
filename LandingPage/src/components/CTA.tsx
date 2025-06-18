@@ -31,7 +31,8 @@ const CTA = () => {
   }, []);
 
   const handleClick = () => {
-    window.location.href = 'http://localhost:5173/register'; // ✅ Navigate to another project
+    window.location.href = `${import.meta.env.VITE_Client_URL}/register`; // ✅ Navigate to another project
+
   };
 
   return (

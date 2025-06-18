@@ -13,7 +13,8 @@ const SignIn = () => {
   const [error, setError] = useState('');
   const [showMessage, setShowMessage] = useState(true);
   const [formData, setFormData] = useState({
-    
+    email: 'colectiveuser@gmail.com',
+    password: 'colective@123'
   });
   const [focusField, setFocusField] = useState('');
   const navigate = useNavigate();
@@ -67,19 +68,21 @@ const SignIn = () => {
       <ForgotPassword isOpen={isModalOpen} onClose={closeModal} />
       <div className='flex flex-col sm:w-[530px] xsmall:w-[355px] w-[330px]'>
         {/* Show Server Message */}
-        {/* {showMessage &&
+        {showMessage &&
           <div className='fixed bg-white/40 z-[999] flex justify-end pb-[50px] top-0 right-0 w-screen h-screen'>
             <motion.div 
             initial={{ y: 800, opacity: 0,scale:0 }}
             animate={{ y: 0, opacity: 1, scale:1 }}
             transition={{ duration: 0.8 }}
 
-            className='w-[350px] sm:w-[520px] mt-auto mx-auto bg-green-50 border-[2px] px-[15px] py-2 border-green-600 rounded-[15px]'>
-              <p onClick={()=>setShowMessage(false)}  className='text-green-50 hover:cursor-pointer bg-green-700 mb-[10px] scale-x-[1.2] text-center rounded-full ml-[300px] sm:ml-[470px] text-[12px] font-[600]'>X</p>
-              <p className='text-[14px] font-[600] text-green-700 '>* If you are visiting this site on your device the first time, the server will take some time to start as being hosted on <span className='font-bold text-green-600'>free Tier</span>. Your patience will be appriciated as it would not take long. It could maximum take 30 to 60 seconds to keep things go.</p>
+            className='w-[350px] sm:w-[520px] mt-auto mx-auto bg-red-50 border-[2px] px-[15px] py-2 border-red-600 rounded-[15px]'>
+              <p onClick={()=>setShowMessage(false)}  className='text-red-50 hover:cursor-pointer bg-red-700 mb-[10px] scale-x-[1.2] text-center rounded-full ml-[300px] sm:ml-[470px] text-[12px] font-[600]'>X</p>
+              <p className='text-[14px] font-[600] text-red-700 '>* If you're visiting the site for a quick preview, you may sign in using the pre-filled credentials, bypassing the registration process. 
+                {/* <span className='font-bold text-green-600'>free Tier</span>. Your patience will be appriciated as it would not take long. It could maximum take 30 to 60 seconds to keep things go. */}
+                </p>
             </motion.div>
           </div>
-        } */}
+        } 
 
         <div className="scale-[1.2] flex mx-auto">
           <img src="/logo.svg" alt="Connection Failed" className="w-[34px] h-[34px]" />
@@ -122,6 +125,7 @@ const SignIn = () => {
                 <input
                   type="password"
                   name="password"
+                  
                   value={password}
                   onChange={handleChange}
                   onFocus={() => handleFocus('password')}

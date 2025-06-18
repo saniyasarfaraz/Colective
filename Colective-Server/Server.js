@@ -35,7 +35,7 @@ app.use("/projecttasks", require("./routes/UsersProjectTasksRoutes"));
 
 app.use("/comments", require("./routes/commentsRoutes"));
 
-app.use("/projects", require("./routes/ProjectRoutes"));
+app.use("/projects", require("./routes/projectRoutes"));
 
 // will return a single task also
 app.use("/project-tasks", require("./routes/ProjectTasksRoutes"));

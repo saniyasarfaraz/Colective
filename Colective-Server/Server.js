@@ -33,7 +33,7 @@ app.use("/manageTasks", require("./routes/taskRoutes"));
 
 app.use("/projecttasks", require("./routes/UsersProjectTasksRoutes"));
 
-app.use("/comments", require("./routes/CommentsRoutes"));
+app.use("/comments", require("./routes/commentsRoutes"));
 
 app.use("/projects", require("./routes/ProjectRoutes"));
 

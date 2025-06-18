@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BsPeopleFill } from 'react-icons/bs';
 import { FaClipboardList, FaRegEdit, FaSnowboarding, FaTrashAlt, FaUserEdit } from 'react-icons/fa';
 import { IoCheckmarkDoneCircleOutline, IoPersonSharp } from 'react-icons/io5';
-import { LuSendHorizonal } from 'react-icons/lu';
+import { LuSendHorizontal } from 'react-icons/lu';
 import { IoMdDoneAll } from 'react-icons/io';
 import Loader from '../../Assets/Loaders/Loader';
 import { CgUiKit } from 'react-icons/cg'; 
@@ -380,7 +380,7 @@ const JoinedTaskDetails = () => {
             className="border outline-none px-2 pt-[4px] h-[165px]  resize-none text-[14px] w-full rounded-[7px]"
           />
           <button className="mt-2 ml-auto" onClick={handleAddComment}>
-            <LuSendHorizonal className="text-blue-500 text-[20px]" />
+            <LuSendHorizontal className="text-blue-500 text-[20px]" />
           </button>
         </div>
       </section>

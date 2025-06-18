@@ -7,8 +7,8 @@ import SignInLoader from "./Assets/Loaders/SignInLoader";
 import Loader from "./Assets/Loaders/Loader";
 
 // Lazy load components
-const SignIn = React.lazy(() => import("./Components/Authentication/SignIn"))
-const SignUp = React.lazy(() => import("./Components/Authentication/SignUp"))
+const SignIn = React.lazy(() => import("./Components/authentication/SignIn"))
+const SignUp = React.lazy(() => import("./Components/authentication/SignUp"))
 const Profile = React.lazy(() => import("./Components/Profile/Profile"))
 const CreateProject = React.lazy(() => import("./Assets/ProjectModals/CreateProject"))
 const AdminProjectList = React.lazy(() => import("./Components/AdminProjects/AdminProjectList"))

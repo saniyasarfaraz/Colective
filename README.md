@@ -16,7 +16,7 @@ Designed for simplicity, scalability, and a seamless user experience, Colective 
 - 🗂 **Project Management**
 
   - Create, manage, and delete projects
-  - Assign roles (Project Guide, Team Member)
+  - Assign roles (Manager, Team Member)
   - Invite members to projects
 
 - ✅ **Task Management**
@@ -29,10 +29,10 @@ Designed for simplicity, scalability, and a seamless user experience, Colective 
 - 📊 **Progress Tracking**
 
   - Visual dashboards with graphs and pie charts
-  - Task completion statistics and member performance summaries
+  - Task completion statistics
 
 - 🔔 **Real-Time Updates**
-  - Live notifications for task changes and project events (using Socket.io)
+  - Live notifications for project invitation (using Socket.io)
 
 ---
 
@@ -110,17 +110,21 @@ npm run dev
 ### `Colective-Server/.env`
 
 ```env
-PORT=5000
+PORT=3001
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-EMAIL_USER=your_emailjs_user
-EMAIL_PASS=your_emailjs_password
 ```
 
 ### `Colective-Client/.env`
 
 ```env
-VITE_REACT_APP_API_BASE_URLa=http://localhost:3001
+VITE_REACT_APP_API_BASE_URL=http://localhost:3001
+```
+
+### `LandingPage/.env`
+
+```env
+VITE_Client_URL= http://localhost:5718
 ```
 
 ---
@@ -132,3 +136,13 @@ VITE_REACT_APP_API_BASE_URLa=http://localhost:3001
 - Usability testing conducted with students to optimize user experience.
 
 ---
+
+## ☁️ Deployment
+
+- Colective-Server deployed on Render
+- Colective-Client deployed on Vercel
+- LandingPage deployed on Vercel
+
+### Access the Website
+
+Live Link - [https://colective-landing-page.vercel.app/](https://colective-landing-page.vercel.app/)
